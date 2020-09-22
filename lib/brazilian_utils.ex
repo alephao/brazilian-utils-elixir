@@ -1,3 +1,2 @@
 defmodule BrazilianUtils do
-
 end

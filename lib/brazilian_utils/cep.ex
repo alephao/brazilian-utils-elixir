@@ -6,7 +6,7 @@ defmodule BrazilianUtils.Cep do
 
   def is_valid(cep) when is_binary(cep) do
     cep
-    |> Helper.only_numbers
+    |> Helper.only_numbers()
     |> is_valid_cep_length
   end
 
