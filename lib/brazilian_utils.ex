@@ -1,4 +1,8 @@
 defmodule BrazilianUtils do
+  @moduledoc """
+  Utilities library for Brazilian Businesses
+  """
+
   @doc ~S"""
   Get a list of Brazilian cities given a state's UF.
 
