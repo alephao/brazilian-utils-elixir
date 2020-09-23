@@ -16,4 +16,8 @@ defmodule BrazilianUtils.HelperTests do
       Helper.only_numbers(123)
     end
   end
+
+  test "generate_checksum" do
+    assert Helper.generate_checksum("12", 10) == 28
+  end
 end
