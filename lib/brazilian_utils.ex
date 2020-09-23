@@ -107,16 +107,83 @@ defmodule BrazilianUtils do
     BrazilianUtils.Cpf.is_valid?(cpf)
   end
 
+  @doc ~S"""
+  Check if a given string is a valid brazilian mobile or landline number.
+
+  ## Examples
+
+    iex> BrazilianUtils.is_valid_phone?("(11) 9 0000-0000")
+    true
+
+    iex> BrazilianUtils.is_valid_phone?("11 9 0000 0000")
+    true
+
+    iex> BrazilianUtils.is_valid_phone?("11 3000 0000")
+    true
+
+    iex> BrazilianUtils.is_valid_phone?("00 9 0000 0000")
+    false
+
+    iex> BrazilianUtils.is_valid_phone?("12345")
+    false
+  """
   @spec is_valid_phone?(String.t()) :: boolean()
   def is_valid_phone?(phone) when is_binary(phone) do
     BrazilianUtils.Phone.is_valid?(phone)
   end
 
+  @doc ~S"""
+  Check if a given string is a valid brazilian mobile number.
+
+  ## Examples
+
+    iex> BrazilianUtils.is_valid_mobile?("(11) 9 0000-0000")
+    true
+
+    iex> BrazilianUtils.is_valid_mobile?("11 9 0000 0000")
+    true
+
+    iex> BrazilianUtils.is_valid_mobile?("11900000000")
+    true
+
+    iex> BrazilianUtils.is_valid_mobile?("00 9 0000 0000")
+    false
+
+    iex> BrazilianUtils.is_valid_mobile?("11 1 0000 0000")
+    false
+
+    iex> BrazilianUtils.is_valid_mobile?("1234")
+    false
+  """
   @spec is_valid_mobile?(String.t()) :: boolean()
   def is_valid_mobile?(phone) when is_binary(phone) do
     BrazilianUtils.Phone.is_valid_mobile_phone?(phone)
   end
 
+
+  @doc ~S"""
+  Check if a given string is a valid brazilian landline number.
+
+  ## Examples
+
+    iex> BrazilianUtils.is_valid_landline?("(11) 3000-0000")
+    true
+
+    iex> BrazilianUtils.is_valid_landline?("11 3 0000-0000")
+    true
+
+    iex> BrazilianUtils.is_valid_landline?("1130000000")
+    true
+
+    iex> BrazilianUtils.is_valid_landline?("00 3000 0000")
+    false
+
+    iex> BrazilianUtils.is_valid_landline?("11 9 0000 0000")
+    false
+
+    iex> BrazilianUtils.is_valid_landline?("1234")
+    false
+  """
   @spec is_valid_landline?(String.t()) :: boolean()
   def is_valid_landline?(phone) when is_binary(phone) do
     BrazilianUtils.Phone.is_valid_landline_phone?(phone)
