@@ -60,6 +60,23 @@ defmodule BrazilianUtils do
     BrazilianUtils.DataSource.get_states()
   end
 
+  @doc ~S"""
+  Check if a given string or number is a valid CEP.
+
+  ## Examples
+
+    iex> BrazilianUtils.is_valid_cep?("77064-620")
+    true
+
+    iex> BrazilianUtils.is_valid_cep?(59014590)
+    true
+
+    iex> BrazilianUtils.is_valid_cep?("12345-6789")
+    false
+
+    iex> BrazilianUtils.is_valid_cep?(1234)
+    false
+  """
   @spec is_valid_cep?(String.t() | integer()) :: boolean()
   def is_valid_cep?(cep) when is_binary(cep) or is_integer(cep) do
     BrazilianUtils.Cep.is_valid?(cep)
