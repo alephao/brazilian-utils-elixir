@@ -82,6 +82,26 @@ defmodule BrazilianUtils do
     BrazilianUtils.Cep.is_valid?(cep)
   end
 
+  @doc ~S"""
+  Check if a given string is a valid CPF.
+
+  ## Examples
+
+    iex> BrazilianUtils.is_valid_cpf?("658.563.984-75")
+    true
+
+    iex> BrazilianUtils.is_valid_cpf?("65856398475")
+    true
+
+    iex> BrazilianUtils.is_valid_cpf?("123.456.789-10")
+    false
+
+    iex> BrazilianUtils.is_valid_cpf?("658.563.984-00")
+    false
+
+    iex> BrazilianUtils.is_valid_cpf?("65856398400")
+    false
+  """
   @spec is_valid_cpf?(String.t()) :: boolean()
   def is_valid_cpf?(cpf) when is_binary(cpf) do
     BrazilianUtils.Cpf.is_valid?(cpf)
