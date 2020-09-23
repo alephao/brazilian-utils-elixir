@@ -18,4 +18,19 @@ defmodule BrazilianUtils do
   def is_cpf_valid?(cpf) when is_binary(cpf) do
     BrazilianUtils.Cpf.is_valid?(cpf)
   end
+
+  @spec is_phone_valid?(String.t()) :: boolean()
+  def is_phone_valid?(phone) when is_binary(phone) do
+    BrazilianUtils.Phone.is_valid?(phone)
+  end
+
+  @spec is_mobile_valid?(String.t()) :: boolean()
+  def is_mobile_valid?(phone) when is_binary(phone) do
+    BrazilianUtils.Phone.is_valid_mobile_phone?(phone)
+  end
+
+  @spec is_landline_valid?(String.t()) :: boolean()
+  def is_landline_valid?(phone) when is_binary(phone) do
+    BrazilianUtils.Phone.is_valid_landline_phone?(phone)
+  end
 end
