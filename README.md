@@ -1,6 +1,6 @@
 # BrazilianUtils
 
-**TODO: Add description**
+Utilities library for Brazilian Businesses based on [brazilian-utils/brazilian-utils](https://github.com/brazilian-utils/brazilian-utils)
 
 ## Installation
 
@@ -19,3 +19,5 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/brazilian_utils](https://hexdocs.pm/brazilian_utils).
 
+## LICENSE
+[MIT](LICENSE)
