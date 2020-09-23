@@ -1,4 +1,19 @@
 defmodule BrazilianUtils do
+
+  @doc ~S"""
+  Get a list of Brazilian cities given a state's UF.
+
+  ## Examples
+
+    Getting cities from Acre:
+
+    iex> BrazilianUtils.get_cities("AC")
+    ["Acrelândia", "Assis Brasil", "Brasiléia", "Bujari", "Capixaba",
+    "Cruzeiro do Sul", "Epitaciolândia", "Feijó", "Jordão", "Manoel Urbano",
+    "Marechal Thaumaturgo", "Mâncio Lima", "Plácido de Castro", "Porto Acre",
+    "Porto Walter", "Rio Branco", "Rodrigues Alves", "Santa Rosa do Purus",
+    "Sena Madureira", "Senador Guiomard", "Tarauacá", "Xapuri"]
+  """
   @spec get_cities(String.t()) :: [String.t()]
   def get_cities(uf) when is_binary(uf) do
     BrazilianUtils.DataSource.get_cities(uf)
