@@ -19,5 +19,23 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/brazilian_utils](https://hexdocs.pm/brazilian_utils).
 
+## TODO
+
+- [x] is_valid_cpf
+- [ ] format_cpf
+- [ ] is_valid_cnpj
+- [ ] format_cnpj
+- [x] is_valid_cep
+- [ ] is_valid_boleto
+- [x] is_valid_phone
+- [x] is_valid_mobile_phone
+- [x] is_valid_landline_phone
+- [ ] is_valid_pis
+- [ ] format_cep
+- [ ] is_valid_ie
+- [x] get_states
+- [x] get_cities
+
+
 ## LICENSE
 [MIT](LICENSE)
