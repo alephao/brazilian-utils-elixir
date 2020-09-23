@@ -1,4 +1,6 @@
 defmodule BrazilianUtils.Cep do
+  @moduledoc false
+
   alias BrazilianUtils.Helper
 
   @spec is_valid?(cep :: String.t() | integer()) :: boolean()

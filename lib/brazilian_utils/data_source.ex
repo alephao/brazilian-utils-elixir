@@ -1,7 +1,6 @@
 defmodule BrazilianUtils.DataSource do
-  @doc ~S"""
-  Return a list with all brazilian states.
-  """
+  @moduledoc false
+
   @spec get_states() :: [%{code: String.t(), name: String.t()}]
   def get_states() do
     [
@@ -35,9 +34,6 @@ defmodule BrazilianUtils.DataSource do
     ]
   end
 
-  @doc ~S"""
-  Return a list of valid phone area codes.
-  """
   @spec get_valid_area_codes() :: [String.t()]
   def get_valid_area_codes() do
     [
@@ -111,9 +107,6 @@ defmodule BrazilianUtils.DataSource do
     ]
   end
 
-  @doc ~S"""
-  Return a list with the name of all brazilian cities of the specified state.
-  """
   @spec get_cities(uf :: String.t()) :: [String.t()]
   def get_cities(uf)
 

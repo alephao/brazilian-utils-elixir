@@ -1,4 +1,6 @@
 defmodule BrazilianUtils.Helper do
+  @moduledoc false
+
   @spec only_numbers(String.t()) :: String.t()
   def only_numbers(value) when is_binary(value) do
     String.replace(value, ~r/[^\d]/, "")

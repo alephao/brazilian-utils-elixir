@@ -1,4 +1,6 @@
 defmodule BrazilianUtils.Cpf do
+  @moduledoc false
+
   alias BrazilianUtils.Helper
 
   @spec is_valid?(String.t()) :: boolean()
