@@ -15,7 +15,7 @@ defmodule BrazilianUtils.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 
@@ -32,7 +32,8 @@ defmodule BrazilianUtils.MixProject do
       name: "BrazilianUtils",
       source_url: "https://github.com/alephao/brazilian-utils-elixir",
       docs: [
-        main: "BrazilianUtils", # The main page in the docs
+        # The main page in the docs
+        main: "BrazilianUtils",
         extras: ["README.md"]
       ]
     ]
