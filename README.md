@@ -12,7 +12,7 @@ your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:brazilian_utils, "~> 0.1.0"}
+    {:brazilian_utils, "~> 0.2.0"}
   ]
 end
 ```
@@ -20,7 +20,7 @@ end
 ## TODO
 
 - [x] is_valid_cpf
-- [ ] format_cpf
+- [x] format_cpf
 - [ ] is_valid_cnpj
 - [ ] format_cnpj
 - [x] is_valid_cep
@@ -29,7 +29,7 @@ end
 - [x] is_valid_mobile_phone
 - [x] is_valid_landline_phone
 - [ ] is_valid_pis
-- [ ] format_cep
+- [x] format_cep
 - [ ] is_valid_ie
 - [x] get_states
 - [x] get_cities
