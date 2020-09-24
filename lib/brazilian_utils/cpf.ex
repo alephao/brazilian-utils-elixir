@@ -45,4 +45,29 @@ defmodule BrazilianUtils.Cpf do
       String.at(cpf_digits, i) == digit
     end)
   end
+
+  def format(cpf) when is_binary(cpf) do
+    parts =
+      cpf
+      |> Helper.only_numbers()
+      |> String.graphemes()
+      |> Enum.chunk_every(3)
+      |> Enum.map(&Enum.join/1)
+
+    l = length(parts)
+
+    cond do
+      l >= 4 ->
+        [digits, [checksum]] =
+          parts
+          |> Enum.take(4)
+          |> Enum.chunk_every(3)
+
+        (Enum.join(digits, ".") <> "-" <> checksum)
+        |> String.slice(0..13)
+
+      l < 4 ->
+        Enum.join(parts, ".")
+    end
+  end
 end

@@ -212,4 +212,26 @@ defmodule BrazilianUtils do
   def format_cep(cep) when is_binary(cep) do
     BrazilianUtils.Cep.format(cep)
   end
+
+  @doc ~S"""
+  Format CPF
+
+  ## Examples
+
+      iex> BrazilianUtils.format_cpf("16561542851")
+      "165.615.428-51"
+
+      iex> BrazilianUtils.format_cpf("165615428")
+      "165.615.428"
+
+      iex> BrazilianUtils.format_cpf("1656154285100000000")
+      "165.615.428-51"
+
+      iex> BrazilianUtils.format_cpf("16sdgs561dsg54!$28sa51")
+      "165.615.428-51"
+  """
+  @spec format_cpf(String.t()) :: String.t()
+  def format_cpf(cpf) when is_binary(cpf) do
+    BrazilianUtils.Cpf.format(cpf)
+  end
 end
