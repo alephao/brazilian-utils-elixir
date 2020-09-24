@@ -163,7 +163,6 @@ defmodule BrazilianUtils do
     BrazilianUtils.Phone.is_valid_mobile_phone?(phone)
   end
 
-
   @doc ~S"""
   Check if a given string is a valid brazilian landline number.
 
@@ -190,5 +189,27 @@ defmodule BrazilianUtils do
   @spec is_valid_landline?(String.t()) :: boolean()
   def is_valid_landline?(phone) when is_binary(phone) do
     BrazilianUtils.Phone.is_valid_landline_phone?(phone)
+  end
+
+  @doc ~S"""
+  Format CEP (brazilian postal code)
+
+  ## Examples
+
+      iex> BrazilianUtils.format_cep("92500000")
+      "92500-000"
+
+      iex> BrazilianUtils.format_cep("9250")
+      "9250"
+
+      iex> BrazilianUtils.format_cep("9250000000000")
+      "92500-000"
+
+      iex> BrazilianUtils.format_cep("9250as0d0d00fsa0g0000")
+      "92500-000"
+  """
+  @spec format_cep(String.t()) :: String.t()
+  def format_cep(cep) when is_binary(cep) do
+    BrazilianUtils.Cep.format(cep)
   end
 end

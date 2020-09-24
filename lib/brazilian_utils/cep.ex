@@ -21,4 +21,18 @@ defmodule BrazilianUtils.Cep do
   defp is_valid_cep_length?(cep) when is_binary(cep) do
     String.length(cep) == 8
   end
+
+  @spec format(String.t()) :: String.t()
+  def format(cep) when is_binary(cep) do
+    {lhs, rhs} =
+      cep
+      |> Helper.only_numbers()
+      |> String.split_at(5)
+
+    if rhs == "" do
+      lhs
+    else
+      (lhs <> "-" <> rhs) |> String.slice(0..8)
+    end
+  end
 end

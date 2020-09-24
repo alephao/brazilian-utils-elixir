@@ -18,4 +18,21 @@ defmodule BrazilianUtils.CepTests do
       Cep.is_valid?(%{foo: :bar})
     end
   end
+
+  test "format" do
+    assert Cep.format("") == ""
+    assert Cep.format("") == ""
+    assert Cep.format("0") == "0"
+    assert Cep.format("01") == "01"
+    assert Cep.format("010") == "010"
+    assert Cep.format("0100") == "0100"
+    assert Cep.format("01001") == "01001"
+    assert Cep.format("010010") == "01001-0"
+    assert Cep.format("0100100") == "01001-00"
+    assert Cep.format("01001000") == "01001-000"
+
+    assert Cep.format("01001000000000") == "01001-000"
+
+    assert Cep.format("a0.10cr01?00#ab0") == "01001-000"
+  end
 end
